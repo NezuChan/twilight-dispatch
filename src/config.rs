@@ -32,6 +32,7 @@ lazy_static! {
             state_emoji: get_env_as("STATE_EMOJI"),
             state_voice: get_env_as("STATE_VOICE"),
             state_old: get_env_as("STATE_OLD"),
+            delete_state_voice: get_optional_env_as("DELETE_state_voice", true),
             rabbit_host: get_env("RABBIT_HOST"),
             rabbit_port: get_env_as("RABBIT_PORT"),
             rabbit_username: get_env("RABBIT_USERNAME"),
@@ -41,7 +42,7 @@ lazy_static! {
             redis_password: get_optional_env_as("REDIS_PASSWORD", ""),
             redis_username: get_optional_env_as("REDIS_USERNAME", ""),
             prometheus_host: get_env("PROMETHEUS_HOST"),
-            prometheus_port: get_env_as("PROMETHEUS_PORT"),
+            prometheus_port: get_env_as("PROMETHEUS_PORT")
         }
     };
 }
@@ -74,6 +75,7 @@ pub struct Config {
     pub state_emoji: bool,
     pub state_voice: bool,
     pub state_old: bool,
+    pub delete_state_voice: bool,
     pub rabbit_host: String,
     pub rabbit_port: u64,
     pub rabbit_username: String,

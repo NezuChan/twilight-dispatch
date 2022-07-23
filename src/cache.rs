@@ -708,7 +708,11 @@ pub async fn update(
                     }
                     match data.0.channel_id {
                         Some(_) => set(conn, &key, &data.0).await?,
-                        None => del(conn, &key).await?,
+                        None => {
+                            if CONFIG.delete_state_voice {
+                                del(conn, &key).await?
+                            }
+                        },
                     }
                 }
             }
