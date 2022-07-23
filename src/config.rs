@@ -32,7 +32,7 @@ lazy_static! {
             state_emoji: get_env_as("STATE_EMOJI"),
             state_voice: get_env_as("STATE_VOICE"),
             state_old: get_env_as("STATE_OLD"),
-            delete_state_voice: get_optional_env_as("DELETE_state_voice", true),
+            delete_state_voice: get_optional_env_as("DELETE_STATE_VOICE", true),
             rabbit_host: get_env("RABBIT_HOST"),
             rabbit_port: get_env_as("RABBIT_PORT"),
             rabbit_username: get_env("RABBIT_USERNAME"),
